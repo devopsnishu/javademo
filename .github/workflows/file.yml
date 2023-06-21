@@ -3,8 +3,6 @@ name: CI-CD file
 on:
   push:
     branches: main 
-  pull_request:
-    branches: main
     
 permissions:
   contents: read
@@ -32,6 +30,7 @@ jobs:
       env:
          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }} 
+         
   docker:
     uses: devopsnishu/Reusable-Action/.github/workflows/reusable.yml@main
     with:
