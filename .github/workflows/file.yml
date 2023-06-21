@@ -25,11 +25,7 @@ jobs:
       run: mvn clean install
     - name: Unit Tests
       run: mvn -B test --file pom.xml
-    - name: SonarQube Scan
-      uses: sonarsource/sonarqube-scan-action@master
-      env:
-         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }} 
+
          
   docker:
     uses: devopsnishu/Reusable-Action/.github/workflows/reusable.yml@main
@@ -40,6 +36,8 @@ jobs:
     secrets:
       DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
       DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
+
+ 
    
  
  
